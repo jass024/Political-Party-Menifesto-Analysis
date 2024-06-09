@@ -1,5 +1,5 @@
 # Political-Party-Menifesto-Analysis
-Political Party Manifesto Analysis
+
 ## Overview
 This project analyzes political party manifestos using advanced Natural Language Processing (NLP) techniques. The application extracts text from PDF documents, processes the text to identify key themes, and visualizes the results interactively.
 The goal is to provide insights into the most significant terms, recurring phrases, and thematic similarities across different manifestos.
@@ -55,14 +55,14 @@ Open a pull request.
 
 
 # Acknowledgements
-NLTK
+- [NLTK] ( https://www.nltk.org/ )
 
-PyPDF2
+- PyPDF2
 
-Plotly
+- Plotly
 
-Bokeh
+- Bokeh
 
-Scikit-learn
+- Scikit-learn
 
-Streamlit
+- Streamlit
