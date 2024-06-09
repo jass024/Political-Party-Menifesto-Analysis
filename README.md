@@ -40,22 +40,22 @@ The Streamlit app provides a user-friendly interface for exploring the processed
 
 # Contributing
 
-Fork the repository.
+- Fork the repository.
 
-Create a new branch (git checkout -b feature-branch).
+- Create a new branch (git checkout -b feature-branch).
 
-Make your changes.
+- Make your changes.
 
-Commit your changes (git commit -m 'Add new feature').
+- Commit your changes (git commit -m 'Add new feature').
 
-Push to the branch (git push origin feature-branch).
+- Push to the branch (git push origin feature-branch).
 
-Open a pull request.
+- Open a pull request.
 
 
 
 # Acknowledgements
-- [NLTK] ( https://www.nltk.org/ )
+- NLTK
 
 - PyPDF2
 
