@@ -80,13 +80,13 @@ def display_topics(model, feature_names, no_top_words):
     print(" ".join([feature_names[i] for i in topic.argsort()[:-no_top_words - 1:-1]]))
 
 # Process each manifesto and store data
-manifesto_paths = get_manifesto_paths()  # Use function to get paths
+manifesto_paths = get_manifesto_paths() 
 manifesto_data = {}
 for party, filepath in manifesto_paths.items():
   try:
     text = extract_text_from_pdf(filepath)
     tokens, word_counts = process_manifesto(text)
-    if tokens:  # Ensure there are valid tokens
+    if tokens:  
       manifesto_data[party] = {
           "text": text,
           "tokens": tokens,
@@ -97,7 +97,7 @@ for party, filepath in manifesto_paths.items():
 
 # Perform TF-IDF analysis
 corpus = [data["text"] for data in manifesto_data.values() if data["text"].strip()]
-if corpus:  # Ensure corpus is not empty
+if corpus:  
   df_tfidf = tfidf_analysis(corpus)
   df_tfidf.columns = [party for party in manifesto_data.keys() if manifesto_data[party]["text"].strip()]
 
@@ -137,11 +137,7 @@ for party, data in manifesto_data.items():
     print(f"\nSentiment for {party}:")
     print(f"Polarity: {polarity}, Subjectivity: {subjectivity}")
 
-# Topic modeling (uncomment if desired)
-#corpus = [data["text"] for data in manifesto_data.values() if data["text"].strip()]
-#if corpus:
- #  lda_model, feature_names = topic_modeling(corpus, n_topics=5)
-  # display_topics(lda_model, feature_names, 10)
+
 
 # Streamlit dashboard
 st.title("Election Manifesto Analysis")
@@ -152,7 +148,7 @@ for party, data in manifesto_data.items():
 
     st.subheader("Word Cloud")
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(data["word_counts"])
-    plt.figure(figsize=(10, 5))  # Create a Matplotlib figure
+    plt.figure(figsize=(10, 5))  
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
     st.pyplot(plt)
